@@ -6,7 +6,7 @@
     "desc": "Création d'un site responsive en HTML et CSS à partir de maquettes Figma.",
     "image": "booki.png",
     "tags": ["HTML5", "CSS3", "Figma"],
-    "projectPage": "projects/Booki.html",
+    "projectPage": "projects/booki.html",
     "codeUrl": "https://github.com/diyaim/booki",
     "codeLabel": "Code"
   },
