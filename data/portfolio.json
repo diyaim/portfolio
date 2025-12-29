@@ -1,0 +1,90 @@
+[
+  {
+    "class": "p1",
+    "slug": "Booki",
+    "title": "Booki",
+    "desc": "Création d'un site responsive en HTML et CSS à partir de maquettes Figma.",
+    "image": "booki.png",
+    "tags": ["HTML5", "CSS3", "Figma"],
+    "projectPage": "projects/Booki.html",
+    "codeUrl": "https://github.com/diyaim/booki",
+    "codeLabel": "Code"
+  },
+  {
+    "class": "p2",
+    "slug": "724events",
+    "title": "724events",
+    "desc": "Campagne de tests manuels et exploratoires : analyse via Swagger et console, tickets Jira et reporting.",
+    "image": "724events.png",
+    "tags": ["Jira", "Swagger", "Exploratoire", "Reporting"],
+    "projectPage": "projects/724events.html",
+    "codeUrl": "https://github.com/diyaim/724events",
+    "codeLabel": "Docs"
+  },
+  {
+    "class": "p3",
+    "slug": "Sophie Bluel",
+    "title": "Sophie Bluel",
+    "desc": "Application JavaScript dynamique : authentification par token, fetch API et interface d’administration.",
+    "image": "sophiebluel.png",
+    "tags": ["JavaScript", "Fetch", "Auth token", "DOM"],
+    "projectPage": "projects/sophie-bluel.html",
+    "codeUrl": "https://github.com/diyaim/Sophie-Bluel",
+    "codeLabel": "Code"
+  },
+  {
+    "class": "p1",
+    "slug": "Kasa",
+    "title": "Kasa",
+    "desc": "Application front-end React avec composants dynamiques, routing et gestion des données.",
+    "image": "kasa.png",
+    "tags": ["React", "SPA", "Components", "Routing"],
+    "projectPage": "projects/kasa.html",
+    "codeUrl": "https://github.com/diyaim/location-immobili-re",
+    "codeLabel": "Code"
+  },
+  {
+    "class": "p4",
+    "slug": "Menu Maker",
+    "title": "Menu Maker (Qwenta)",
+    "desc": "Spécifications fonctionnelles, Kanban Notion, découpage en tâches et estimation en story points.",
+    "image": "qwenta.png",
+    "tags": ["Spécifications", "Notion", "Kanban", "Story points"],
+    "projectPage": "projects/menu-maker.html",
+    "codeUrl": "https://github.com/diyaim/menumaker",
+    "codeLabel": "Docs"
+  },
+  {
+    "class": "p1",
+    "slug": "Eco Bliss Bath",
+    "title": "Eco Bliss Bath",
+    "desc": "Automatisation de tests avec Cypress : API, smoke tests et détection de failles XSS.",
+    "image": "ecoblissbath.png",
+    "tags": ["Cypress", "API", "Smoke", "XSS"],
+    "projectPage": "projects/eco-bliss-bath.html",
+    "codeUrl": "https://github.com/diyaim/EcoBlissBath",
+    "codeLabel": "Code"
+  },
+  {
+    "class": "p3",
+    "slug": "Tomsen",
+    "title": "Tomsen (PayForge)",
+    "desc": "Définition d’une stratégie de test : exigences, scénarios, non-régression et cahier de recette.",
+    "image": "tomsen.png",
+    "tags": ["Stratégie", "Exigences", "Non-régression", "Agile"],
+    "projectPage": "projects/tomsen.html",
+    "codeUrl": "https://github.com/diyaim/tomsen",
+    "codeLabel": "Docs"
+  },
+  {
+    "class": "p5",
+    "slug": "Portfolio",
+    "title": "Portfolio (optimisation)",
+    "desc": "Optimisation SEO et accessibilité : Lighthouse, WAVE, contrastes, structure HTML et performances.",
+    "image": "portfolio.png",
+    "tags": ["SEO", "Accessibilité", "Lighthouse", "WAVE"],
+    "projectPage": "projects/portfolio.html",
+    "codeUrl": "https://github.com/diyaim/portfolio",
+    "codeLabel": "Code"
+  }
+]

@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Dyhia Immoune - Testeuse logiciel junior | Portfolio</title>
+    <meta name="description"
+        content="Portfolio de Dyhia Immoune, testeuse logiciel junior. Découvrez mes compétences, mes projets et contactez-moi." />
+
+    <!-- Preconnect cdn et cdnjs pour accélérer le CSS -->
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+
+    <!-- bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+
+    <!-- Bootstrap js - Chargement avec l'option defer pour un chargement en parallèle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" defer></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css" />
+    <!-- préchargement de l'image du hero -->
+    <link rel="preload" as="image" href="images/image000.webp">
+
+</head>
+
+<body>
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg fixed-top navbar-dark navbarScroll">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#home">QA Junior</a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home">Accueil</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">À propos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#skills">Compétences</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#portfolio">Projets</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- HERO -->
+        <section class="hero" id="home">
+            <div class="container hero-inner">
+                <div class="hero-content">
+
+                    <h1 class="hero-title">La qualité logicielle, ce n’est pas un détail.</h1>
+                    <p class="hero-subtitle">
+                        Testeuse logiciel junior : je teste, je valide et je sécurise vos applications pour garantir une
+                        expérience fiable.
+                    </p>
+
+                    <div class="hero-actions">
+                        <a class="btn btn-primary btn-pill" href="#portfolio">
+                            <svg class="icon-diagram-project" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="currentColor"><!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M0 80C0 53.5 21.5 32 48 32l96 0c26.5 0 48 21.5 48 48l0 16 128 0 0-16c0-26.5 21.5-48 48-48l96 0c26.5 0 48 21.5 48 48l0 96c0 26.5-21.5 48-48 48l-96 0c-26.5 0-48-21.5-48-48l0-16-128 0 0 16c0 7.3-1.7 14.3-4.6 20.5l68.6 91.5 80 0c26.5 0 48 21.5 48 48l0 96c0 26.5-21.5 48-48 48l-96 0c-26.5 0-48-21.5-48-48l0-96c0-7.3 1.7-14.3 4.6-20.5L128 224 48 224c-26.5 0-48-21.5-48-48L0 80z"/></svg>
+                            Voir mes projets
+                        </a>
+                        <a class="btn btn-outline-light btn-pill contact-me" href="#contact">
+                            <svg class="icon-paper-plane"xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" fill="currentColor"><!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M322.5 351.7L523.4 150.9L391 520.3L322.5 351.7zM489.4 117L288.6 317.8L120 249.3L489.4 117zM70.1 280.8L275.9 364.4L359.5 570.2C364.8 583.3 377.6 591.9 391.8 591.9C406.5 591.9 419.6 582.7 424.6 568.8L602.6 72C606.1 62.2 603.6 51.4 596.3 44C589 36.6 578.1 34.2 568.3 37.7L71.4 215.7C57.5 220.7 48.3 233.8 48.3 248.5C48.3 262.7 56.9 275.5 70 280.8z"/></svg>
+                            Me contacter
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ABOUT -->
+        <section id="about" class="section">
+            <div class="container section-wrapper">
+                <div class="text-center">
+                    <h2 class="section-title">À propos de moi</h2>
+                    <p class="section-subtitle">
+                        Testeuse logiciel junior motivée, récemment formée, avec une première expérience concrète sur
+                        des projets de tests logiciels.
+                    </p>
+                </div>
+
+                <div class="about-top">
+                    <div class="photo-wrapper">
+                        <img
+                            src="images/person.jpg"
+                            class="imageAboutPage"
+                            alt="Photo de Dyhia Immoune"
+                            width="208"
+                            height="208"
+                            loading="lazy"
+                            decoding="async"
+                        />
+
+                        <span class="photo-name">Dyhia Immoune</span>
+                    </div>
+                </div>
+
+                <div class="parcours-grid">
+                    <article class="parcours-card formation">
+                        <h3>Formation</h3>
+                        <p>Fondamentaux QA, rédaction de cahier de recette, exécution de campagnes et reporting.</p>
+                    </article>
+
+                    <article class="parcours-card specialisation">
+                        <h3>Spécialisation</h3>
+                        <p>Tests fonctionnels, exploratoires, API (Swagger) et priorisation par criticité.</p>
+                    </article>
+
+                    <article class="parcours-card passion">
+                        <h3>Ce qui me motive</h3>
+                        <p>Améliorer l’expérience utilisateur, sécuriser les parcours et livrer une qualité constante.
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- SKILLS -->
+        <section id="skills" class="section section-alt">
+            <div class="container section-wrapper">
+                <div class="text-center">
+                    <h2 class="section-title">Mes compétences</h2>
+                    <p class="section-subtitle">
+                        Je combine qualité logicielle et développement front-end pour livrer des interfaces fiables,
+                        testées et maintenables.
+                    </p>
+                </div>
+
+                <div class="skills-grid"></div>
+            </div>
+        </section>
+
+        <!-- PORTFOLIO -->
+        <section id="portfolio" class="section">
+            <div class="container section-wrapper">
+                <div class="text-center">
+                    <h2 class="section-title">Mes projets</h2>
+                    <p class="section-subtitle">
+                        Une sélection de projets réalisés : QA (stratégie, campagne, automatisation) et front-end
+                        (intégration, React, API).
+                    </p>
+                </div>
+                <div class="projects-grid">
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT -->
+        <section id="contact" class="section section-alt">
+            <div class="container section-wrapper">
+                <div class="text-center">
+                    <h2 class="section-title">Contactez-moi</h2>
+                    <p class="section-subtitle">Un projet, une question ou une collaboration ? Échangeons ensemble.</p>
+                </div>
+                <!-- Infos -->
+                <div class="contact-card">
+                    <h3 class="contact-title">Coordonnées</h3>
+
+                    <div class="contact-item">
+                        <span class="contact-icon">
+                            <svg class="icon-phone" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M160.2 25C152.3 6.1 131.7-3.9 112.1 1.4l-5.5 1.5c-64.6 17.6-119.8 80.2-103.7 156.4 37.1 175 174.8 312.7 349.8 349.8 76.3 16.2 138.8-39.1 156.4-103.7l1.5-5.5c5.4-19.7-4.7-40.3-23.5-48.1l-97.3-40.5c-16.5-6.9-35.6-2.1-47 11.8l-38.6 47.2C233.9 335.4 177.3 277 144.8 205.3L189 169.3c13.9-11.3 18.6-30.4 11.8-47L160.2 25z"/></svg>
+                        </span>
+                        <div>
+                            <div class="contact-label">Téléphone</div>
+                            <a class="contact-link" href="tel:+33767734217">07 67 73 42 17</a>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <span class="contact-icon">
+                            <svg class="icon-envelope" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M61.4 64C27.5 64 0 91.5 0 125.4 0 126.3 0 127.1 .1 128L0 128 0 384c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-256-.1 0c0-.9 .1-1.7 .1-2.6 0-33.9-27.5-61.4-61.4-61.4L61.4 64zM464 192.3L464 384c0 8.8-7.2 16-16 16L64 400c-8.8 0-16-7.2-16-16l0-191.7 154.8 117.4c31.4 23.9 74.9 23.9 106.4 0L464 192.3zM48 125.4C48 118 54 112 61.4 112l389.2 0c7.4 0 13.4 6 13.4 13.4 0 4.2-2 8.2-5.3 10.7L280.2 271.5c-14.3 10.8-34.1 10.8-48.4 0L53.3 136.1c-3.3-2.5-5.3-6.5-5.3-10.7z"/></svg>
+                        </span>
+                        <div>
+                            <div class="contact-label">Email</div>
+                            <a class="contact-link" href="mailto:immounedyhia95@gmail.com">immounedyhia95@gmail.com</a>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <span class="contact-icon">
+                            <svg class="icon-linkedin" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M100.3 448l-92.9 0 0-299.1 92.9 0 0 299.1zM53.8 108.1C24.1 108.1 0 83.5 0 53.8 0 39.5 5.7 25.9 15.8 15.8s23.8-15.8 38-15.8 27.9 5.7 38 15.8 15.8 23.8 15.8 38c0 29.7-24.1 54.3-53.8 54.3zM447.9 448l-92.7 0 0-145.6c0-34.7-.7-79.2-48.3-79.2-48.3 0-55.7 37.7-55.7 76.7l0 148.1-92.8 0 0-299.1 89.1 0 0 40.8 1.3 0c12.4-23.5 42.7-48.3 87.9-48.3 94 0 111.3 61.9 111.3 142.3l0 164.3-.1 0z"/></svg>
+                        </span>
+                        <div>
+                            <div class="contact-label">LinkedIn</div>
+                            <a class="contact-link" href="#" target="_blank" rel="noopener">Voir mon profil</a>
+                        </div>
+                    </div>
+
+                </div>
+
+
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+
+    <footer class="footer">
+        <div class="container section-wrapper">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>Dyhia Immoune</h3>
+                    <p>Testeuse logiciel junior — Qualité, fiabilité et expérience utilisateur.</p>
+                </div>
+
+                <div class="footer-social">
+                    <h4>Me suivre</h4>
+                    <div class="social-links">
+                        <a href="#" aria-label="LinkedIn" target="_blank" rel="noopener">
+                            <svg class="icon-linkedin" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M100.3 448l-92.9 0 0-299.1 92.9 0 0 299.1zM53.8 108.1C24.1 108.1 0 83.5 0 53.8 0 39.5 5.7 25.9 15.8 15.8s23.8-15.8 38-15.8 27.9 5.7 38 15.8 15.8 23.8 15.8 38c0 29.7-24.1 54.3-53.8 54.3zM447.9 448l-92.7 0 0-145.6c0-34.7-.7-79.2-48.3-79.2-48.3 0-55.7 37.7-55.7 76.7l0 148.1-92.8 0 0-299.1 89.1 0 0 40.8 1.3 0c12.4-23.5 42.7-48.3 87.9-48.3 94 0 111.3 61.9 111.3 142.3l0 164.3-.1 0z"/></svg>
+                        </a>
+                        <a href="#" aria-label="GitHub" target="_blank" rel="noopener">
+                            <svg class="icon-github" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3 .3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5 .3-6.2 2.3zm44.2-1.7c-2.9 .7-4.9 2.6-4.6 4.9 .3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM252.8 8c-138.7 0-244.8 105.3-244.8 244 0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1 100-33.2 167.8-128.1 167.8-239 0-138.7-112.5-244-251.2-244zM105.2 352.9c-1.3 1-1 3.3 .7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3 .3 2.9 2.3 3.9 1.6 1 3.6 .7 4.3-.7 .7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3 .7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3 .7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+                        </a>
+                        <a href="#" aria-label="Email">
+                            <svg class="icon-envelope" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M61.4 64C27.5 64 0 91.5 0 125.4 0 126.3 0 127.1 .1 128L0 128 0 384c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-256-.1 0c0-.9 .1-1.7 .1-2.6 0-33.9-27.5-61.4-61.4-61.4L61.4 64zM464 192.3L464 384c0 8.8-7.2 16-16 16L64 400c-8.8 0-16-7.2-16-16l0-191.7 154.8 117.4c31.4 23.9 74.9 23.9 106.4 0L464 192.3zM48 125.4C48 118 54 112 61.4 112l389.2 0c7.4 0 13.4 6 13.4 13.4 0 4.2-2 8.2-5.3 10.7L280.2 271.5c-14.3 10.8-34.1 10.8-48.4 0L53.3 136.1c-3.3-2.5-5.3-6.5-5.3-10.7z"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="script/script.js"></script>
+</body>
+
+</html>

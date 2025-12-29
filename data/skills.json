@@ -1,0 +1,72 @@
+[
+    {
+        "type": "qa",
+        "icon": "fa-solid fa-shield-halved",
+        "title": "QA & Stratégie de test",
+        "text": "Définir une stratégie, prioriser, couvrir les exigences et cadrer une campagne de test.",
+        "pills": [
+            "Revue d’exigences",
+            "Criticité",
+            "Cahier de recette"
+        ]
+    },
+    {
+        "type": "bug",
+        "icon": "fa-solid fa-bug",
+        "title": "Tests & Analyse d’anomalies",
+        "text": "Exécuter, explorer, diagnostiquer et documenter des bugs de façon exploitable.",
+        "pills": [
+            "Tests manuels",
+            "Exploratoire",
+            "Console",
+            "Swagger"
+        ]
+    },
+    {
+        "type": "auto",
+        "icon": "fa-solid fa-vial-circle-check",
+        "title": "Automatisation (Cypress)",
+        "text": "Automatiser les tests API, smoke et sécurité (XSS) avec des scripts maintenables.",
+        "pills": [
+            "API tests",
+            "Smoke",
+            "XSS"
+        ]
+    },
+    {
+        "type": "pm",
+        "icon": "fa-solid fa-diagram-project",
+        "title": "Gestion & outils",
+        "text": "Structurer le projet, suivre l’avancement et rendre visible la qualité.",
+        "pills": [
+            "Notion",
+            "Kanban",
+            "Jira",
+            "Story points"
+        ]
+    },
+    {
+        "type": "fe",
+        "icon": "fa-solid fa-code",
+        "title": "Front-end",
+        "text": "Intégration, responsive et dynamique : du HTML/CSS au React moderne.",
+        "pills": [
+            "HTML / CSS",
+            "Bootstrap",
+            "JavaScript",
+            "React"
+        ]
+    },
+    {
+        "type": "fe",
+        "icon": "fa-solid fa-code",
+        "title": "Front-end",
+        "text": "Intégration, responsive et dynamique : du HTML/CSS au React moderne.",
+        "pills": [
+            "HTML / CSS",
+            "Bootstrap",
+            "JavaScript",
+            "React"
+        ]
+    }
+]
