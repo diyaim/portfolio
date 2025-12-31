@@ -56,17 +56,5 @@
             "JavaScript",
             "React"
         ]
-    },
-    {
-        "type": "fe",
-        "icon": "fa-solid fa-code",
-        "title": "Front-end",
-        "text": "Intégration, responsive et dynamique : du HTML/CSS au React moderne.",
-        "pills": [
-            "HTML / CSS",
-            "Bootstrap",
-            "JavaScript",
-            "React"
-        ]
     }
 ]
