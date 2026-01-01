@@ -668,3 +668,65 @@ section {
 .ms-auto { margin-left: auto !important; }
 .fw-bold { font-weight: 700 !important; }
 .text-center { text-align: center !important; }
+
+.project-hero-spacer { padding-top: 1rem; }
+
+.project-layout {
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: 1.2fr .8fr;
+  align-items: start;
+}
+
+.project-card {
+  border-radius: 16px;
+  padding: 1.25rem;
+  background: rgba(255, 255, 255, .03);
+  border: 1px solid rgba(255, 255, 255, .08);
+}
+
+.project-card h2 {
+  margin: 0 0 .75rem 0;
+  font-size: 1.25rem;
+}
+
+.project-list {
+  margin: .5rem 0 0 0;
+  padding-left: 1.15rem;
+}
+
+.project-list li { margin: .35rem 0; }
+
+.project-meta {
+  display: grid;
+  gap: .75rem;
+}
+
+.project-meta .meta-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: .6rem .75rem;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, .03);
+  border: 1px solid rgba(255, 255, 255, .06);
+}
+
+.project-meta .meta-row span:first-child { opacity: .85; }
+
+.project-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .75rem;
+  margin-top: 1rem;
+}
+
+.project-divider {
+  height: 1px;
+  background: rgba(255, 255, 255, .08);
+  margin: 1.25rem 0;
+}
+
+@media (max-width: 992px) {
+  .project-layout { grid-template-columns: 1fr; }
+}
