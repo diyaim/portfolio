@@ -1,265 +1,658 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dyhia Immoune - Testeuse logiciel | Portfolio</title>
+  <meta name="description" content="Portfolio de Dyhia Immoune, testeuse logiciel junior (QA). Compétences, projets et contact." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="preload" as="image" href="images/profile.webp" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="canonical" href="https://diyaim.github.io/portfolio/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Dyhia Immoune - Portfolio" />
+  <meta property="og:title" content="Dyhia Immoune - Testeuse logiciel | Portfolio" />
+  <meta property="og:description" content="Testeuse logiciel : tests fonctionnels, API et automatisation Cypress. Projets QA, compétences et CV." />
+  <meta property="og:url" content="https://diyaim.github.io/portfolio/" />
+  <meta property="og:image" content="https://diyaim.github.io/portfolio/images/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <style>
+    /* ============================================================
+       Design tokens — HeroUI v3 / Pro default theme
+       ============================================================ */
+    :root {
+      --white: oklch(100% 0 0);
+      --black: oklch(0% 0 0);
+      --snow: oklch(0.9911 0 0);
+      --eclipse: oklch(0.2103 0.0059 285.89);
+      --radius: 0.5rem;
+      --radius-3xl: calc(var(--radius) * 3);
+      --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+      --ease-out: cubic-bezier(0, 0, 0.2, 1);
+      --cursor-interactive: pointer;
 
-    <title>Dyhia Immoune - Testeuse logiciel junior | Portfolio</title>
-    <meta name="description"
-        content="Portfolio de Dyhia Immoune, testeuse logiciel junior. Découvrez mes compétences, mes projets et contactez-moi." />
+      --accent: oklch(0.6204 0.195 253.83);
+      --accent-foreground: var(--snow);
+      --accent-hover: color-mix(in oklab, var(--accent) 88%, var(--black));
+      --accent-soft: color-mix(in oklab, var(--accent) 14%, transparent);
+      --accent-soft-foreground: var(--accent);
+      --success: oklch(0.7329 0.1935 150.81);
+      --success-soft: color-mix(in oklab, var(--success) 16%, transparent);
+      --success-soft-foreground: oklch(0.55 0.15 150.81);
+      --warning: oklch(0.8203 0.1388 76.34);
+      --warning-soft: color-mix(in oklab, var(--warning) 20%, transparent);
+      --warning-soft-foreground: oklch(0.58 0.13 70);
+      --danger: oklch(0.594 0.1967 24.63);
+      --danger-soft: color-mix(in oklab, var(--danger) 14%, transparent);
+      --danger-soft-foreground: var(--danger);
 
-    <!-- Preconnect cdn et cdnjs pour accélérer le CSS -->
-    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+      /* light */
+      --background: oklch(0.9702 0 0);
+      --foreground: var(--eclipse);
+      --surface: var(--white);
+      --surface-secondary: oklch(0.9524 0.0013 286.37);
+      --muted: oklch(0.5517 0.0138 285.94);
+      --default: oklch(94% 0.001 286.375);
+      --default-hover: oklch(91% 0.002 286.375);
+      --default-foreground: var(--eclipse);
+      --border: oklch(90% 0.004 286.32);
+      --separator: oklch(92% 0.004 286.32);
+      --nav-bg: color-mix(in oklab, var(--background) 72%, transparent);
+      --surface-shadow: 0 2px 4px 0 rgba(0,0,0,.04), 0 1px 2px 0 rgba(0,0,0,.06), 0 0 1px 0 rgba(0,0,0,.06);
+      --surface-shadow-hover: 0 12px 32px -8px rgba(0,0,0,.12), 0 2px 6px 0 rgba(0,0,0,.05), 0 0 1px 0 rgba(0,0,0,.08);
+      color-scheme: light;
+    }
+    :root[data-theme="dark"] {
+      --background: oklch(12% 0.005 285.823);
+      --foreground: var(--snow);
+      --surface: oklch(0.2103 0.0059 285.89);
+      --surface-secondary: oklch(0.257 0.0037 286.14);
+      --muted: oklch(70.5% 0.015 286.067);
+      --default: oklch(27.4% 0.006 286.033);
+      --default-hover: oklch(31% 0.006 286.033);
+      --default-foreground: var(--snow);
+      --border: oklch(28% 0.006 286.033);
+      --separator: oklch(25% 0.006 286.033);
+      --accent-soft-foreground: oklch(0.74 0.14 253.83);
+      --success-soft-foreground: var(--success);
+      --warning-soft-foreground: var(--warning);
+      --surface-shadow: 0 0 0 1px oklch(100% 0 0 / .05) inset;
+      --surface-shadow-hover: 0 0 0 1px oklch(100% 0 0 / .1) inset, 0 16px 40px -12px rgba(0,0,0,.6);
+      color-scheme: dark;
+    }
 
-    <!-- bootstrap CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+    /* ============================================================
+       Base
+       ============================================================ */
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 80px; -webkit-text-size-adjust: 100%; }
+    body {
+      margin: 0;
+      font-family: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+      font-size: 15px;
+      line-height: 1.6;
+      background: var(--background);
+      color: var(--foreground);
+      -webkit-font-smoothing: antialiased;
+      transition: background-color .2s var(--ease-out), color .2s var(--ease-out);
+    }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+    h1, h2, h3, h4 { margin: 0; letter-spacing: -0.02em; line-height: 1.2; }
+    p { margin: 0; }
+    ul { margin: 0; padding: 0; list-style: none; }
+    :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 8px; }
+    .container { width: 100%; max-width: 1120px; margin: 0 auto; padding: 0 16px; }
+    @media (min-width: 640px) { .container { padding: 0 24px; } }
+    .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+    svg.i { width: 16px; height: 16px; flex-shrink: 0; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
 
-    <!-- Bootstrap js - Chargement avec l'option defer pour un chargement en parallèle -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" defer></script>
+    /* ============================================================
+       HeroUI components (BEM, translated from @heroui/react styles)
+       ============================================================ */
+    .button {
+      --button-bg: transparent; --button-bg-hover: var(--button-bg); --button-fg: currentColor;
+      position: relative; display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      height: 40px; padding: 0 16px; border-radius: 24px; border: 0;
+      font: inherit; font-size: 14px; font-weight: 500; white-space: nowrap;
+      background-color: var(--button-bg); color: var(--button-fg); cursor: var(--cursor-interactive);
+      transition: transform 250ms var(--ease-smooth), background-color 100ms var(--ease-out), box-shadow 100ms var(--ease-out);
+      user-select: none; -webkit-tap-highlight-color: transparent;
+    }
+    .button:active { transform: scale(0.97); background-color: var(--button-bg-hover); }
+    @media (hover: hover) { .button:hover { background-color: var(--button-bg-hover); } }
+    .button--sm { height: 32px; padding: 0 12px; font-size: 13px; }
+    .button--lg { height: 44px; padding: 0 20px; font-size: 15px; }
+    .button--primary { --button-bg: var(--accent); --button-bg-hover: var(--accent-hover); --button-fg: var(--accent-foreground); }
+    .button--secondary { --button-bg: var(--default); --button-bg-hover: var(--default-hover); --button-fg: var(--accent-soft-foreground); }
+    .button--tertiary { --button-bg: var(--default); --button-bg-hover: var(--default-hover); --button-fg: var(--default-foreground); }
+    .button--ghost { --button-bg: transparent; --button-bg-hover: var(--default); --button-fg: var(--default-foreground); }
+    .button--outline { --button-bg: transparent; --button-bg-hover: color-mix(in srgb, var(--default) 60%, transparent); --button-fg: var(--default-foreground); border: 1px solid var(--border); }
+    .button--icon-only { width: 40px; padding: 0; }
+    .button--icon-only.button--sm { width: 32px; }
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="style.css" />
-    <!-- préchargement de l'image du hero -->
-    <link rel="preload" as="image" href="images/image000.webp">
+    .card {
+      position: relative; display: flex; flex-direction: column; gap: 12px; padding: 20px;
+      background: var(--surface); box-shadow: var(--surface-shadow);
+      border-radius: min(32px, var(--radius-3xl));
+    }
+    .card--secondary { background: var(--surface-secondary); }
+    .card__title { font-size: 16px; font-weight: 600; line-height: 1.4; }
+    .card__description { font-size: 14px; line-height: 1.6; color: var(--muted); }
+    .card__content { display: flex; flex: 1; flex-direction: column; gap: 8px; }
+    .card__footer { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
 
+    .chip {
+      --chip-bg: var(--default); --chip-fg: currentColor;
+      display: inline-flex; align-items: center; gap: 4px; width: fit-content;
+      padding: 2px 10px; border-radius: 16px; font-size: 12px; line-height: 20px; font-weight: 500;
+      background: var(--chip-bg); color: var(--chip-fg); white-space: nowrap;
+    }
+    .chip--lg { padding: 4px 12px; font-size: 13px; }
+    .chip--accent.chip--soft { --chip-bg: var(--accent-soft); --chip-fg: var(--accent-soft-foreground); }
+    .chip--success.chip--soft { --chip-bg: var(--success-soft); --chip-fg: var(--success-soft-foreground); }
+    .chip--warning.chip--soft { --chip-bg: var(--warning-soft); --chip-fg: var(--warning-soft-foreground); }
+    .chip--danger.chip--soft { --chip-bg: var(--danger-soft); --chip-fg: var(--danger-soft-foreground); }
+    .chip__dot { width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
+
+    .avatar { position: relative; display: flex; flex-shrink: 0; overflow: hidden; background: var(--default); border-radius: 50%; }
+    .avatar__image { width: 100%; height: 100%; object-fit: cover; }
+
+    .separator { height: 1px; background: var(--separator); border: 0; margin: 0; }
+
+    /* ============================================================
+       Navbar
+       ============================================================ */
+    .navbar {
+      position: sticky; top: 0; z-index: 50;
+      background: var(--nav-bg);
+      backdrop-filter: saturate(180%) blur(16px); -webkit-backdrop-filter: saturate(180%) blur(16px);
+      border-bottom: 1px solid transparent;
+      transition: border-color .2s var(--ease-out);
+    }
+    .navbar[data-scrolled="true"] { border-bottom-color: var(--separator); }
+    .navbar__inner { display: flex; align-items: center; justify-content: space-between; height: 64px; gap: 16px; }
+    .brand { display: flex; align-items: center; gap: 10px; font-weight: 600; font-size: 15px; white-space: nowrap; }
+    @media (max-width: 479px) { .nav-cta { display: none; } }
+    .brand .avatar { width: 32px; height: 32px; }
+    .nav-links { display: none; gap: 4px; }
+    .nav-link { padding: 6px 12px; border-radius: 999px; font-size: 14px; font-weight: 500; color: var(--muted); transition: color .15s, background-color .15s; }
+    .nav-link:hover { color: var(--foreground); background: var(--default); }
+    .nav-link[aria-current="true"] { color: var(--foreground); }
+    .nav-actions { display: flex; align-items: center; gap: 8px; }
+    .menu-toggle { display: inline-flex; }
+    .mobile-menu { display: none; padding: 8px 16px 16px; border-bottom: 1px solid var(--separator); }
+    .mobile-menu[data-open="true"] { display: grid; gap: 2px; }
+    .mobile-menu .nav-link { padding: 10px 12px; font-size: 15px; }
+    @media (min-width: 768px) {
+      .nav-links { display: flex; }
+      .menu-toggle, .mobile-menu, .mobile-menu[data-open="true"] { display: none; }
+    }
+    .theme-icon-sun { display: none; }
+    :root[data-theme="dark"] .theme-icon-sun { display: block; }
+    :root[data-theme="dark"] .theme-icon-moon { display: none; }
+
+    /* ============================================================
+       Hero
+       ============================================================ */
+    .hero { position: relative; padding: 56px 0 72px; overflow: hidden; }
+    .hero::before {
+      content: ""; position: absolute; inset: -20% -10% auto; height: 520px; z-index: -1; pointer-events: none;
+      background:
+        radial-gradient(40% 50% at 70% 30%, color-mix(in oklab, var(--accent) 22%, transparent), transparent 70%),
+        radial-gradient(30% 40% at 20% 20%, color-mix(in oklab, oklch(0.7 0.16 300) 16%, transparent), transparent 70%);
+      filter: blur(20px);
+    }
+    .hero__grid { display: grid; gap: 40px; align-items: center; }
+    .hero__photo { justify-self: center; position: relative; }
+    .hero__photo .avatar {
+      width: 220px; height: 220px; border-radius: 40px;
+      box-shadow: var(--surface-shadow-hover);
+      outline: 6px solid var(--surface); outline-offset: 0;
+    }
+    .hero__badge {
+      position: absolute; left: 50%; bottom: -14px; transform: translateX(-50%);
+      display: inline-flex; align-items: center; gap: 8px; padding: 6px 12px; border-radius: 999px;
+      background: var(--surface); box-shadow: var(--surface-shadow-hover); font-size: 13px; font-weight: 500; white-space: nowrap;
+    }
+    .pulse { width: 8px; height: 8px; border-radius: 50%; background: var(--success); box-shadow: 0 0 0 0 color-mix(in oklab, var(--success) 60%, transparent); animation: pulse 2s infinite; }
+    @keyframes pulse { 70% { box-shadow: 0 0 0 8px transparent; } 100% { box-shadow: 0 0 0 0 transparent; } }
+    @media (prefers-reduced-motion: reduce) { .pulse { animation: none; } html { scroll-behavior: auto; } }
+    .hero__content { display: flex; flex-direction: column; gap: 20px; text-align: center; align-items: center; }
+    .hero__title { font-size: clamp(32px, 6vw, 52px); font-weight: 700; letter-spacing: -0.035em; }
+    .hero__title .grad { background: linear-gradient(120deg, var(--accent), oklch(0.62 0.2 300)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .hero__subtitle { font-size: 17px; color: var(--muted); max-width: 560px; }
+    .hero__actions { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
+    .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; width: 100%; max-width: 480px; margin-top: 8px; }
+    .stat { padding: 14px 12px; text-align: center; }
+    .stat__value { font-size: 22px; font-weight: 700; letter-spacing: -0.02em; }
+    .stat__label { font-size: 12px; color: var(--muted); line-height: 1.4; }
+    @media (min-width: 900px) {
+      .hero { padding: 96px 0 112px; }
+      .hero__grid { grid-template-columns: 1.3fr 1fr; gap: 64px; }
+      .hero__content { text-align: left; align-items: flex-start; }
+      .hero__actions { justify-content: flex-start; }
+      .hero__photo { order: 2; }
+      .hero__photo .avatar { width: 340px; height: 400px; }
+    }
+
+    /* ============================================================
+       Sections
+       ============================================================ */
+    .section { padding: 72px 0; }
+    .section--alt { background: var(--surface-secondary); }
+    :root[data-theme="dark"] .section--alt { background: color-mix(in oklab, var(--surface) 45%, var(--background)); }
+    .section__header { display: flex; flex-direction: column; gap: 10px; align-items: center; text-align: center; margin-bottom: 40px; }
+    .section__title { font-size: clamp(26px, 4vw, 36px); font-weight: 700; letter-spacing: -0.03em; }
+    .section__subtitle { color: var(--muted); max-width: 620px; font-size: 16px; }
+
+    .grid { display: grid; gap: 16px; }
+    @media (min-width: 640px) { .grid--2 { grid-template-columns: repeat(2, 1fr); } .grid--3 { grid-template-columns: repeat(2, 1fr); } }
+    @media (min-width: 960px) { .grid--3 { grid-template-columns: repeat(3, 1fr); } }
+
+    .icon-box {
+      width: 40px; height: 40px; border-radius: 12px; display: grid; place-items: center;
+      background: var(--accent-soft); color: var(--accent-soft-foreground);
+    }
+    .icon-box svg.i { width: 20px; height: 20px; }
+    .icon-box--success { background: var(--success-soft); color: var(--success-soft-foreground); }
+    .icon-box--warning { background: var(--warning-soft); color: var(--warning-soft-foreground); }
+    .icon-box--danger { background: var(--danger-soft); color: var(--danger-soft-foreground); }
+    .icon-box--violet { background: color-mix(in oklab, oklch(0.62 0.2 300) 15%, transparent); color: oklch(0.6 0.2 300); }
+    .chips { display: flex; flex-wrap: wrap; gap: 6px; }
+
+    /* Projects */
+    .project { padding: 0; overflow: hidden; gap: 0; transition: box-shadow .2s var(--ease-out), transform .25s var(--ease-smooth); }
+    @media (hover: hover) { .project:hover { box-shadow: var(--surface-shadow-hover); transform: translateY(-2px); } .project:hover .project__img { transform: scale(1.04); } }
+    .project__media {
+      position: relative; aspect-ratio: 16 / 9; overflow: hidden; margin: 8px 8px 0; border-radius: 18px;
+      display: grid; place-items: center; padding: 48px 36px 28px;
+      background: radial-gradient(120% 120% at 50% 0%, var(--surface) 0%, var(--default) 100%);
+    }
+    :root[data-theme="dark"] .project__media { background: radial-gradient(120% 120% at 50% 0%, oklch(0.94 0 0) 0%, oklch(0.86 0.003 286) 100%); }
+    .project__img { width: auto; height: auto; max-width: 70%; max-height: 64px; object-fit: contain; transition: transform .5s var(--ease-smooth); }
+    .project__type { position: absolute; top: 10px; left: 10px; backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); background: color-mix(in oklab, var(--surface) 85%, transparent); }
+    .project__body { display: flex; flex-direction: column; gap: 12px; padding: 16px 20px 20px; flex: 1; }
+    .project__body .card__footer { margin-top: auto; padding-top: 4px; }
+
+    .filters { display: inline-flex; gap: 4px; padding: 4px; border-radius: 999px; background: var(--default); margin: -16px auto 32px; }
+    .filter { border: 0; font: inherit; font-size: 13px; font-weight: 500; padding: 6px 14px; border-radius: 999px; cursor: pointer; background: transparent; color: var(--muted); transition: background-color .15s, color .15s; }
+    .filter[aria-pressed="true"] { background: var(--surface); color: var(--foreground); box-shadow: var(--surface-shadow); }
+    .filters-wrap { display: flex; justify-content: center; }
+    .project[hidden] { display: none; }
+
+    /* About */
+    .about { display: grid; gap: 16px; }
+    @media (min-width: 900px) { .about { grid-template-columns: 1fr 2fr; } }
+    .profile-card { align-items: center; text-align: center; padding: 28px 20px; }
+    .profile-card .avatar { width: 112px; height: 112px; }
+    .profile-meta { display: grid; gap: 10px; width: 100%; text-align: left; margin-top: 8px; }
+    .meta-row { display: flex; align-items: center; gap: 10px; font-size: 14px; color: var(--muted); }
+    .meta-row strong { color: var(--foreground); font-weight: 500; }
+
+    /* Contact */
+    .contact { max-width: 720px; margin: 0 auto; padding: 8px; gap: 0; }
+    .contact-row { display: flex; align-items: center; gap: 14px; padding: 14px 12px; border-radius: 16px; transition: background-color .15s; }
+    .contact-row:hover { background: var(--default); }
+    .contact-row__label { font-size: 12px; color: var(--muted); }
+    .contact-row__value { font-weight: 500; overflow-wrap: anywhere; }
+    .contact-row .chev { margin-left: auto; color: var(--muted); }
+    .contact .separator { margin: 0 12px; }
+    .cta { text-align: center; padding: 32px 20px; margin-top: 16px; background: linear-gradient(135deg, var(--accent), oklch(0.55 0.2 290)); color: var(--snow); }
+    .cta .card__description { color: color-mix(in oklab, var(--snow) 80%, transparent); }
+    .cta .button { --button-bg: var(--snow); --button-bg-hover: oklch(0.94 0 0); --button-fg: var(--eclipse); }
+    .cta__actions { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
+    .cta .button.cta__ghost { --button-bg: transparent; --button-bg-hover: oklch(1 0 0 / .14); --button-fg: var(--snow); border: 1px solid oklch(1 0 0 / .5); }
+
+    /* Footer */
+    .footer { padding: 32px 0; border-top: 1px solid var(--separator); }
+    .footer__inner { display: flex; flex-direction: column; gap: 16px; align-items: center; justify-content: space-between; text-align: center; }
+    .footer__text { font-size: 13px; color: var(--muted); }
+    .socials { display: flex; gap: 4px; }
+    @media (min-width: 640px) { .footer__inner { flex-direction: row; text-align: left; } }
+
+    .reveal { opacity: 0; transform: translateY(12px); transition: opacity .6s var(--ease-out), transform .6s var(--ease-out); }
+    .reveal[data-visible="true"] { opacity: 1; transform: none; }
+    @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } }
+  </style>
+  <script>
+    try { var t = localStorage.getItem("theme"); if (t) document.documentElement.setAttribute("data-theme", t); } catch (e) {}
+  </script>
 </head>
 
 <body>
-    <!-- NAVBAR -->
-    <nav class="navbar navbar-expand-lg fixed-top navbar-dark navbarScroll">
-        <div class="container">
-            <a class="navbar-brand fw-bold" href="#home">QA Junior</a>
+  <!-- SVG icon sprite (Lucide-style) -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <symbol id="i-shield" viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></symbol>
+      <symbol id="i-bug" viewBox="0 0 24 24"><path d="m8 2 1.88 1.88"/><path d="M14.12 3.88 16 2"/><path d="M9 7.13v-1a3.003 3.003 0 1 1 6 0v1"/><path d="M12 20c-3.3 0-6-2.7-6-6v-3a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v3c0 3.3-2.7 6-6 6"/><path d="M12 20v-9"/><path d="M6.53 9C4.6 8.8 3 7.1 3 5"/><path d="M6 13H2"/><path d="M3 21c0-2.1 1.7-3.9 3.8-4"/><path d="M20.97 5c0 2.1-1.6 3.8-3.5 4"/><path d="M22 13h-4"/><path d="M17.2 17c2.1.1 3.8 1.9 3.8 4"/></symbol>
+      <symbol id="i-flask" viewBox="0 0 24 24"><path d="M10 2v7.527a2 2 0 0 1-.211.896L4.72 20.55a1 1 0 0 0 .9 1.45h12.76a1 1 0 0 0 .9-1.45l-5.069-10.127A2 2 0 0 1 14 9.527V2"/><path d="M8.5 2h7"/><path d="M7 16h10"/></symbol>
+      <symbol id="i-kanban" viewBox="0 0 24 24"><path d="M6 5v11"/><path d="M12 5v6"/><path d="M18 5v14"/></symbol>
+      <symbol id="i-code" viewBox="0 0 24 24"><path d="m16 18 6-6-6-6"/><path d="m8 6-6 6 6 6"/></symbol>
+      <symbol id="i-grad" viewBox="0 0 24 24"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/><path d="M22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></symbol>
+      <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></symbol>
+      <symbol id="i-heart" viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></symbol>
+      <symbol id="i-phone" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></symbol>
+      <symbol id="i-mail" viewBox="0 0 24 24"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></symbol>
+      <symbol id="i-linkedin" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></symbol>
+      <symbol id="i-github" viewBox="0 0 24 24"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></symbol>
+      <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></symbol>
+      <symbol id="i-external" viewBox="0 0 24 24"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></symbol>
+      <symbol id="i-chev" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></symbol>
+      <symbol id="i-send" viewBox="0 0 24 24"><path d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z"/><path d="m21.854 2.147-10.94 10.939"/></symbol>
+      <symbol id="i-layers" viewBox="0 0 24 24"><path d="m12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z"/><path d="m22 17.65-9.17 4.16a2 2 0 0 1-1.66 0L2 17.65"/><path d="m22 12.65-9.17 4.16a2 2 0 0 1-1.66 0L2 12.65"/></symbol>
+      <symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></symbol>
+      <symbol id="i-briefcase" viewBox="0 0 24 24"><path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/><rect width="20" height="14" x="2" y="6" rx="2"/></symbol>
+      <symbol id="i-download" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/><path d="M12 15V3"/></symbol>
+      <symbol id="i-moon" viewBox="0 0 24 24"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></symbol>
+      <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></symbol>
+      <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 6h16"/><path d="M4 12h16"/><path d="M4 18h16"/></symbol>
+    </defs>
+  </svg>
 
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#home">Accueil</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#about">À propos</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#skills">Compétences</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#portfolio">Projets</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-                </ul>
-            </div>
-        </div>
+  <!-- NAVBAR -->
+  <header class="navbar" id="navbar">
+    <div class="container navbar__inner">
+      <a href="#home" class="brand">
+        Dyhia Immoune
+      </a>
+      <nav class="nav-links" aria-label="Navigation principale">
+        <a class="nav-link" href="#about">À propos</a>
+        <a class="nav-link" href="#skills">Compétences</a>
+        <a class="nav-link" href="#portfolio">Projets</a>
+        <a class="nav-link" href="#contact">Contact</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="button button--ghost button--icon-only button--sm" id="themeToggle" type="button" aria-label="Changer de thème">
+          <svg class="i theme-icon-moon"><use href="#i-moon"/></svg>
+          <svg class="i theme-icon-sun"><use href="#i-sun"/></svg>
+        </button>
+        <a class="button button--primary button--sm nav-cta" href="#contact">Me contacter</a>
+        <button class="button button--ghost button--icon-only button--sm menu-toggle" id="menuToggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobileMenu">
+          <svg class="i"><use href="#i-menu"/></svg>
+        </button>
+      </div>
+    </div>
+    <nav class="mobile-menu" id="mobileMenu" aria-label="Navigation mobile">
+      <a class="nav-link" href="#about">À propos</a>
+      <a class="nav-link" href="#skills">Compétences</a>
+      <a class="nav-link" href="#portfolio">Projets</a>
+      <a class="nav-link" href="#contact">Contact</a>
     </nav>
+  </header>
 
-    <main>
-        <!-- HERO -->
-        <section class="hero" id="home">
-            <div class="container hero-inner">
-                <div class="hero-content">
-
-                    <h1 class="hero-title">La qualité logicielle, ce n’est pas un détail.</h1>
-                    <p class="hero-subtitle">
-                        Testeuse logiciel junior : je teste, je valide et je sécurise vos applications pour garantir une
-                        expérience fiable.
-                    </p>
-
-                    <div class="hero-actions">
-                        <a class="btn btn-primary btn-pill" href="#portfolio">
-                            <svg class="icon-diagram-project" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
-                                fill="currentColor">
-                                <path
-                                    d="M0 80C0 53.5 21.5 32 48 32l96 0c26.5 0 48 21.5 48 48l0 16 128 0 0-16c0-26.5 21.5-48 48-48l96 0c26.5 0 48 21.5 48 48l0 96c0 26.5-21.5 48-48 48l-96 0c-26.5 0-48-21.5-48-48l0-16-128 0 0 16c0 7.3-1.7 14.3-4.6 20.5l68.6 91.5 80 0c26.5 0 48 21.5 48 48l0 96c0 26.5-21.5 48-48 48l-96 0c-26.5 0-48-21.5-48-48l0-96c0-7.3 1.7-14.3 4.6-20.5L128 224 48 224c-26.5 0-48-21.5-48-48L0 80z" />
-                            </svg>
-                            Voir mes projets
-                        </a>
-                        <a class="btn btn-outline-light btn-pill contact-me" href="#contact">
-                            <svg class="icon-paper-plane" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"
-                                fill="currentColor">
-                                <path
-                                    d="M322.5 351.7L523.4 150.9L391 520.3L322.5 351.7zM489.4 117L288.6 317.8L120 249.3L489.4 117zM70.1 280.8L275.9 364.4L359.5 570.2C364.8 583.3 377.6 591.9 391.8 591.9C406.5 591.9 419.6 582.7 424.6 568.8L602.6 72C606.1 62.2 603.6 51.4 596.3 44C589 36.6 578.1 34.2 568.3 37.7L71.4 215.7C57.5 220.7 48.3 233.8 48.3 248.5C48.3 262.7 56.9 275.5 70 280.8z" />
-                            </svg>
-                            Me contacter
-                        </a>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-        <!-- ABOUT -->
-        <section id="about" class="section">
-            <div class="container section-wrapper">
-                <div class="text-center">
-                    <h2 class="section-title">À propos de moi</h2>
-                    <p class="section-subtitle">
-                        Testeuse logiciel junior motivée, récemment formée, avec une première expérience concrète sur
-                        des projets de tests logiciels.
-                    </p>
-                </div>
-
-                <div class="about-top">
-                    <div class="photo-wrapper">
-                        <img src="images/person1.webp" class="imageAboutPage" alt="Photo de Dyhia Immoune" loading="lazy" decoding="async" />
-                        <span class="photo-name">Dyhia Immoune</span>
-                    </div>
-                </div>
-
-                <div class="parcours-grid">
-                    <article class="parcours-card formation">
-                        <h3>Formation</h3>
-                        <p>QA Engineer Junior – Testeur Logiciel (OpenClassrooms)
-                            Profil issu d’un Master (Bac+5) en ingénierie électronique, robotique & vision artificielle,
-                            apportant une forte rigueur analytique et une solide compréhension technique mises au
-                            service de la qualité logicielle.</p>
-                    </article>
-
-                    <article class="parcours-card specialisation">
-                        <h3>Spécialisation</h3>
-                        <p>Tests fonctionnels, exploratoires, smoke tests et tests API (Postman, Swagger).
-                            Automatisation des tests UI & API avec Cypress, suivi des anomalies sous Jira, priorisation
-                            par criticité et travail en environnement Agile / Scrum.</p>
-                    </article>
-
-                    <article class="parcours-card passion">
-                        <h3>Ce qui me motive</h3>
-                        <p>Allier expertise technique et qualité logicielle pour fiabiliser les applications, prévenir
-                            les défauts critiques et contribuer à des produits robustes, performants et orientés
-                            utilisateur.
-                        </p>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <!-- SKILLS -->
-        <section id="skills" class="section section-alt">
-            <div class="container section-wrapper">
-                <div class="text-center">
-                    <h2 class="section-title">Mes compétences</h2>
-                    <p class="section-subtitle">
-                        Je combine qualité logicielle et développement front-end pour livrer des interfaces fiables,
-                        testées et maintenables.
-                    </p>
-                </div>
-
-                <div class="skills-grid"></div>
-            </div>
-        </section>
-
-        <!-- PORTFOLIO -->
-        <section id="portfolio" class="section">
-            <div class="container section-wrapper">
-                <div class="text-center">
-                    <h2 class="section-title">Mes projets</h2>
-                    <p class="section-subtitle">
-                        Une sélection de projets réalisés : QA (stratégie, campagne, automatisation) et front-end
-                        (intégration, React, API).
-                    </p>
-                </div>
-                <div class="projects-grid">
-                </div>
-            </div>
-        </section>
-
-        <!-- CONTACT -->
-        <section id="contact" class="section section-alt">
-            <div class="container section-wrapper">
-                <div class="text-center">
-                    <h2 class="section-title">Contactez-moi</h2>
-                    <p class="section-subtitle">Un projet, une question ou une collaboration ? Échangeons ensemble.</p>
-                </div>
-                <!-- Infos -->
-                <div class="contact-card">
-                    <h3 class="contact-title">Coordonnées</h3>
-
-                    <div class="contact-item">
-                        <span class="contact-icon">
-                            <svg class="icon-phone" xmlns="http://www.w3.org/2000/svg"
-                                viewBox="0 0 512 512">
-                                <path
-                                    d="M160.2 25C152.3 6.1 131.7-3.9 112.1 1.4l-5.5 1.5c-64.6 17.6-119.8 80.2-103.7 156.4 37.1 175 174.8 312.7 349.8 349.8 76.3 16.2 138.8-39.1 156.4-103.7l1.5-5.5c5.4-19.7-4.7-40.3-23.5-48.1l-97.3-40.5c-16.5-6.9-35.6-2.1-47 11.8l-38.6 47.2C233.9 335.4 177.3 277 144.8 205.3L189 169.3c13.9-11.3 18.6-30.4 11.8-47L160.2 25z" />
-                            </svg>
-                        </span>
-                        <div>
-                            <div class="contact-label">Téléphone</div>
-                            <a class="contact-link" href="tel:+33767734217">07 67 73 42 17</a>
-                        </div>
-                    </div>
-
-                    <div class="contact-item">
-                        <span class="contact-icon">
-                            <svg class="icon-envelope" xmlns="http://www.w3.org/2000/svg"
-                                viewBox="0 0 512 512">
-                                <path
-                                    d="M61.4 64C27.5 64 0 91.5 0 125.4 0 126.3 0 127.1 .1 128L0 128 0 384c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-256-.1 0c0-.9 .1-1.7 .1-2.6 0-33.9-27.5-61.4-61.4-61.4L61.4 64zM464 192.3L464 384c0 8.8-7.2 16-16 16L64 400c-8.8 0-16-7.2-16-16l0-191.7 154.8 117.4c31.4 23.9 74.9 23.9 106.4 0L464 192.3zM48 125.4C48 118 54 112 61.4 112l389.2 0c7.4 0 13.4 6 13.4 13.4 0 4.2-2 8.2-5.3 10.7L280.2 271.5c-14.3 10.8-34.1 10.8-48.4 0L53.3 136.1c-3.3-2.5-5.3-6.5-5.3-10.7z" />
-                            </svg>
-                        </span>
-                        <div>
-                            <div class="contact-label">Email</div>
-                            <a class="contact-link" href="mailto:immounedyhia95@gmail.com">immounedyhia95@gmail.com</a>
-                        </div>
-                    </div>
-
-                    <div class="contact-item">
-                        <span class="contact-icon">
-                            <svg class="icon-linkedin" xmlns="http://www.w3.org/2000/svg"
-                                viewBox="0 0 448 512">
-                                <path
-                                    d="M100.3 448l-92.9 0 0-299.1 92.9 0 0 299.1zM53.8 108.1C24.1 108.1 0 83.5 0 53.8 0 39.5 5.7 25.9 15.8 15.8s23.8-15.8 38-15.8 27.9 5.7 38 15.8 15.8 23.8 15.8 38c0 29.7-24.1 54.3-53.8 54.3zM447.9 448l-92.7 0 0-145.6c0-34.7-.7-79.2-48.3-79.2-48.3 0-55.7 37.7-55.7 76.7l0 148.1-92.8 0 0-299.1 89.1 0 0 40.8 1.3 0c12.4-23.5 42.7-48.3 87.9-48.3 94 0 111.3 61.9 111.3 142.3l0 164.3-.1 0z" />
-                            </svg>
-                        </span>
-                        <div>
-                            <div class="contact-label">LinkedIn</div>
-                            <a class="contact-link" href="#" target="_blank" rel="noopener">Voir mon profil</a>
-                        </div>
-                    </div>
-
-                </div>
-
-
-            </div>
-        </section>
-    </main>
-
-    <!-- FOOTER -->
-
-    <footer class="footer">
-        <div class="container section-wrapper">
-            <div class="footer-grid">
-                <div class="footer-brand">
-                    <h3>Dyhia Immoune</h3>
-                    <p>Testeuse logiciel junior — Qualité, fiabilité et expérience utilisateur.</p>
-                </div>
-
-                <div class="footer-social">
-                    <h4>Me suivre</h4>
-                    <div class="social-links">
-                        <a href="#" aria-label="LinkedIn" target="_blank" rel="noopener">
-                            <svg class="icon-linkedin" xmlns="http://www.w3.org/2000/svg"
-                                viewBox="0 0 448 512">
-                                <path
-                                    d="M100.3 448l-92.9 0 0-299.1 92.9 0 0 299.1zM53.8 108.1C24.1 108.1 0 83.5 0 53.8 0 39.5 5.7 25.9 15.8 15.8s23.8-15.8 38-15.8 27.9 5.7 38 15.8 15.8 23.8 15.8 38c0 29.7-24.1 54.3-53.8 54.3zM447.9 448l-92.7 0 0-145.6c0-34.7-.7-79.2-48.3-79.2-48.3 0-55.7 37.7-55.7 76.7l0 148.1-92.8 0 0-299.1 89.1 0 0 40.8 1.3 0c12.4-23.5 42.7-48.3 87.9-48.3 94 0 111.3 61.9 111.3 142.3l0 164.3-.1 0z" />
-                            </svg>
-                        </a>
-                        <a href="#" aria-label="GitHub" target="_blank" rel="noopener">
-                            <svg class="icon-github" xmlns="http://www.w3.org/2000/svg"
-                                viewBox="0 0 512 512">
-                                <path
-                                    d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3 .3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5 .3-6.2 2.3zm44.2-1.7c-2.9 .7-4.9 2.6-4.6 4.9 .3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM252.8 8c-138.7 0-244.8 105.3-244.8 244 0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1 100-33.2 167.8-128.1 167.8-239 0-138.7-112.5-244-251.2-244zM105.2 352.9c-1.3 1-1 3.3 .7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3 .3 2.9 2.3 3.9 1.6 1 3.6 .7 4.3-.7 .7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3 .7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3 .7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z" />
-                            </svg>
-                        </a>
-                        <a href="#" aria-label="Email">
-                            <svg class="icon-envelope" xmlns="http://www.w3.org/2000/svg"
-                                viewBox="0 0 512 512">
-                                <path
-                                    d="M61.4 64C27.5 64 0 91.5 0 125.4 0 126.3 0 127.1 .1 128L0 128 0 384c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-256-.1 0c0-.9 .1-1.7 .1-2.6 0-33.9-27.5-61.4-61.4-61.4L61.4 64zM464 192.3L464 384c0 8.8-7.2 16-16 16L64 400c-8.8 0-16-7.2-16-16l0-191.7 154.8 117.4c31.4 23.9 74.9 23.9 106.4 0L464 192.3zM48 125.4C48 118 54 112 61.4 112l389.2 0c7.4 0 13.4 6 13.4 13.4 0 4.2-2 8.2-5.3 10.7L280.2 271.5c-14.3 10.8-34.1 10.8-48.4 0L53.3 136.1c-3.3-2.5-5.3-6.5-5.3-10.7z" />
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-            </div>
+  <main>
+    <!-- HERO -->
+    <section class="hero" id="home">
+      <div class="container hero__grid">
+        <div class="hero__photo">
+          <span class="avatar"><img class="avatar__image" src="images/profile.webp" alt="Portrait de Dyhia Immoune" width="800" height="800" /></span>
+          <span class="hero__badge"><span class="pulse" aria-hidden="true"></span>Disponible pour un poste QA</span>
         </div>
-    </footer>
-    <script src="script/script.js"></script>
-</body>
 
+        <div class="hero__content">
+          <span class="chip chip--accent chip--soft chip--lg"><svg class="i"><use href="#i-shield"/></svg>Testeuse logiciel</span>
+          <h1 class="hero__title">La qualité logicielle,<br /><span class="grad">ce n’est pas un détail.</span></h1>
+          <p class="hero__subtitle">Je teste, je valide et je sécurise vos applications pour garantir une expérience fiable - des tests exploratoires à l’automatisation Cypress.</p>
+          <div class="hero__actions">
+            <a class="button button--primary button--lg" href="#portfolio">Voir mes projets <svg class="i"><use href="#i-arrow"/></svg></a>
+            <a class="button button--outline button--lg" href="cv/CV-Dyhia-Immoune-Testeuse-Logiciel-QA.pdf" download><svg class="i"><use href="#i-download"/></svg> Télécharger mon CV</a>
+          </div>
+          <div class="stats">
+            <div class="card stat"><div class="stat__value">8</div><div class="stat__label">projets réalisés</div></div>
+            <div class="card stat"><div class="stat__value">Bac+5</div><div class="stat__label">ingénierie</div></div>
+            <div class="card stat"><div class="stat__value">Agile</div><div class="stat__label">Scrum &amp; Kanban</div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="section section--alt" id="about">
+      <div class="container">
+        <div class="section__header reveal">
+          <span class="chip chip--accent chip--soft">À propos</span>
+          <h2 class="section__title">À propos de moi</h2>
+          <p class="section__subtitle">Testeuse logiciel formée aux tests fonctionnels, API et à l’automatisation Cypress, avec une première expérience concrète sur des projets de tests logiciels.</p>
+        </div>
+
+        <div class="about">
+          <article class="card profile-card reveal">
+            <span class="avatar"><img class="avatar__image" src="images/profile.webp" alt="Photo de Dyhia Immoune" loading="lazy" /></span>
+            <div>
+              <h3 class="card__title">Dyhia Immoune</h3>
+              <p class="card__description">Testeuse logiciel</p>
+            </div>
+            <hr class="separator" style="width:100%" />
+            <div class="profile-meta">
+              <div class="meta-row"><svg class="i"><use href="#i-briefcase"/></svg><span>Recherche <strong>poste QA / Testeuse logiciel</strong></span></div>
+              <div class="meta-row"><svg class="i"><use href="#i-grad"/></svg><span><strong>OpenClassrooms</strong> · Master ingénierie</span></div>
+              <div class="meta-row"><svg class="i"><use href="#i-pin"/></svg><span>Rouen · Paris · Le Havre · <strong>Télétravail</strong></span></div>
+            </div>
+            <a class="button button--primary button--full-width" style="width:100%" href="cv/CV-Dyhia-Immoune-Testeuse-Logiciel-QA.pdf" download><svg class="i"><use href="#i-download"/></svg> Télécharger mon CV</a>
+          </article>
+
+          <div class="grid">
+            <article class="card reveal">
+              <div class="icon-box"><svg class="i"><use href="#i-grad"/></svg></div>
+              <div class="card__content">
+                <h3 class="card__title">Formation</h3>
+                <p class="card__description">Testeuse logiciel (OpenClassrooms). Profil issu d’un Master (Bac+5) en ingénierie électronique, robotique &amp; vision artificielle, apportant une forte rigueur analytique et une solide compréhension technique au service de la qualité logicielle.</p>
+              </div>
+            </article>
+            <div class="grid grid--2">
+              <article class="card reveal">
+                <div class="icon-box icon-box--success"><svg class="i"><use href="#i-target"/></svg></div>
+                <div class="card__content">
+                  <h3 class="card__title">Spécialisation</h3>
+                  <p class="card__description">Tests fonctionnels, exploratoires, smoke tests et tests API (Postman, Swagger). Automatisation UI &amp; API avec Cypress, suivi des anomalies sous Jira, priorisation par criticité, environnement Agile / Scrum.</p>
+                </div>
+              </article>
+              <article class="card reveal">
+                <div class="icon-box icon-box--danger"><svg class="i"><use href="#i-heart"/></svg></div>
+                <div class="card__content">
+                  <h3 class="card__title">Ce qui me motive</h3>
+                  <p class="card__description">Allier expertise technique et qualité logicielle pour fiabiliser les applications, prévenir les défauts critiques et contribuer à des produits robustes, performants et orientés utilisateur.</p>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section class="section" id="skills">
+      <div class="container">
+        <div class="section__header reveal">
+          <span class="chip chip--accent chip--soft">Compétences</span>
+          <h2 class="section__title">Mes compétences</h2>
+          <p class="section__subtitle">Je combine qualité logicielle et développement front-end pour livrer des interfaces fiables, testées et maintenables.</p>
+        </div>
+        <div class="grid grid--3" id="skillsGrid"></div>
+      </div>
+    </section>
+
+    <!-- PORTFOLIO -->
+    <section class="section section--alt" id="portfolio">
+      <div class="container">
+        <div class="section__header reveal">
+          <span class="chip chip--accent chip--soft">Projets</span>
+          <h2 class="section__title">Mes projets</h2>
+          <p class="section__subtitle">Une sélection de projets réalisés : QA (stratégie, campagne, automatisation) et front-end (intégration, React, API).</p>
+        </div>
+        <div class="filters-wrap">
+          <div class="filters" role="group" aria-label="Filtrer les projets">
+            <button class="filter" type="button" data-filter="all" aria-pressed="true">Tous</button>
+            <button class="filter" type="button" data-filter="qa" aria-pressed="false">QA</button>
+            <button class="filter" type="button" data-filter="fe" aria-pressed="false">Front-end</button>
+          </div>
+        </div>
+        <div class="grid grid--3" id="projectsGrid"></div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="section__header reveal">
+          <span class="chip chip--accent chip--soft">Contact</span>
+          <h2 class="section__title">Contactez-moi</h2>
+          <p class="section__subtitle">Un projet, une question ou une collaboration ? Échangeons ensemble.</p>
+        </div>
+
+        <div class="card contact reveal">
+          <a class="contact-row" href="tel:+33767734217">
+            <span class="icon-box"><svg class="i"><use href="#i-phone"/></svg></span>
+            <span><span class="contact-row__label">Téléphone</span><br /><span class="contact-row__value">07 67 73 42 17</span></span>
+            <svg class="i chev"><use href="#i-chev"/></svg>
+          </a>
+          <hr class="separator" />
+          <a class="contact-row" href="mailto:immounedyhia95@gmail.com">
+            <span class="icon-box icon-box--success"><svg class="i"><use href="#i-mail"/></svg></span>
+            <span><span class="contact-row__label">Email</span><br /><span class="contact-row__value">immounedyhia95@gmail.com</span></span>
+            <svg class="i chev"><use href="#i-chev"/></svg>
+          </a>
+          <hr class="separator" />
+          <a class="contact-row" href="https://www.linkedin.com/in/dyhia-immoune-112a6918a/" target="_blank" rel="noopener">
+            <span class="icon-box icon-box--violet"><svg class="i"><use href="#i-linkedin"/></svg></span>
+            <span><span class="contact-row__label">LinkedIn</span><br /><span class="contact-row__value">Voir mon profil</span></span>
+            <svg class="i chev"><use href="#i-external"/></svg>
+          </a>
+        </div>
+
+        <div class="card cta reveal" style="max-width:720px;margin-left:auto;margin-right:auto;">
+          <h3 class="card__title" style="font-size:20px">Envie de fiabiliser votre produit ?</h3>
+          <p class="card__description">Je suis disponible pour un poste de testeuse logiciel / QA.</p>
+          <div class="cta__actions"><a class="button button--lg" href="mailto:immounedyhia95@gmail.com"><svg class="i"><use href="#i-mail"/></svg> Écrire un email</a><a class="button button--lg cta__ghost" href="cv/CV-Dyhia-Immoune-Testeuse-Logiciel-QA.pdf" download><svg class="i"><use href="#i-download"/></svg> Télécharger mon CV</a></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div>
+        <div style="font-weight:600">Dyhia Immoune</div>
+        <p class="footer__text">Testeuse QA | Tests API &amp; Cypress | Ingénieure de formation</p>
+      </div>
+      <div class="socials">
+        <a class="button button--ghost button--icon-only" href="https://www.linkedin.com/in/dyhia-immoune-112a6918a/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg class="i"><use href="#i-linkedin"/></svg></a>
+        <a class="button button--ghost button--icon-only" href="https://github.com/diyaim" target="_blank" rel="noopener" aria-label="GitHub"><svg class="i"><use href="#i-github"/></svg></a>
+        <a class="button button--ghost button--icon-only" href="mailto:immounedyhia95@gmail.com" aria-label="Email"><svg class="i"><use href="#i-mail"/></svg></a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    /* ---------- Données (intégrées : la page fonctionne aussi en file://) ---------- */
+    const SKILLS = [
+      { icon: "i-shield", tone: "", title: "QA & Stratégie de test", text: "Définir une stratégie, prioriser, couvrir les exigences et cadrer une campagne de test.", pills: ["Revue d’exigences", "Criticité", "Cahier de recette"] },
+      { icon: "i-bug", tone: "danger", title: "Tests & Analyse d’anomalies", text: "Exécuter, explorer, diagnostiquer et documenter des bugs de façon exploitable.", pills: ["Tests manuels", "Exploratoire", "Postman", "Swagger", "Console"] },
+      { icon: "i-flask", tone: "success", title: "Automatisation (Cypress)", text: "Automatiser les tests API, smoke et sécurité (XSS) avec des scripts maintenables.", pills: ["API tests", "Smoke", "XSS"] },
+      { icon: "i-kanban", tone: "warning", title: "Gestion & outils", text: "Structurer le projet, suivre l’avancement et rendre visible la qualité.", pills: ["Notion", "Kanban", "Jira", "Story points"] },
+      { icon: "i-code", tone: "violet", title: "Front-end", text: "Intégration, responsive et dynamique : du HTML/CSS au React moderne.", pills: ["HTML / CSS", "Bootstrap", "JavaScript", "React"] },
+      { icon: "i-layers", tone: "", title: "Qualité web", text: "Auditer performance, SEO et accessibilité pour des interfaces inclusives.", pills: ["Lighthouse", "WAVE", "Accessibilité"] }
+    ];
+
+    const PROJECTS = [
+      { cat: "qa", title: "Eco Bliss Bath", desc: "Automatisation de tests avec Cypress : API, smoke tests et détection de failles XSS.", image: "ecoblissbath.webp", tags: ["Cypress", "API", "Smoke", "XSS"], page: "projects/eco-bliss-bath.html", code: "https://github.com/diyaim/EcoBlissBath", codeLabel: "Code" },
+      { cat: "qa", title: "724events", desc: "Campagne de tests manuels et exploratoires : analyse via Swagger et console, tickets Jira et reporting.", image: "724events.webp", tags: ["Jira", "Swagger", "Exploratoire", "Reporting"], page: "projects/724events.html", code: "https://github.com/diyaim/724events", codeLabel: "Docs" },
+      { cat: "qa", title: "Tomsen (PayForge)", desc: "Définition d’une stratégie de test : exigences, scénarios, non-régression et cahier de recette.", image: "tomsen.webp", tags: ["Stratégie", "Exigences", "Non-régression", "Agile"], page: "projects/tomsen.html", code: "https://github.com/diyaim/tomsen", codeLabel: "Docs" },
+      { cat: "qa", title: "Menu Maker (Qwenta)", desc: "Spécifications fonctionnelles, Kanban Notion, découpage en tâches et estimation en story points.", image: "qwenta.webp", tags: ["Spécifications", "Notion", "Kanban", "Story points"], page: "projects/menu-maker.html", code: "https://github.com/diyaim/menumaker", codeLabel: "Docs" },
+      { cat: "qa", title: "Portfolio (optimisation)", desc: "Optimisation SEO et accessibilité : Lighthouse, WAVE, contrastes, structure HTML et performances.", image: "portfolio.webp", tags: ["SEO", "Accessibilité", "Lighthouse", "WAVE"], page: "projects/portfolio.html", code: "https://github.com/diyaim/portfolio", codeLabel: "Code" },
+      { cat: "fe", title: "Kasa", desc: "Application front-end React avec composants dynamiques, routing et gestion des données.", image: "kasa.webp", tags: ["React", "SPA", "Components", "Routing"], page: "projects/kasa.html", code: "https://github.com/diyaim/location-immobili-re", codeLabel: "Code" },
+      { cat: "fe", title: "Sophie Bluel", desc: "Application JavaScript dynamique : authentification par token, fetch API et interface d’administration.", image: "sophiebluel.webp", tags: ["JavaScript", "Fetch", "Auth token", "DOM"], page: "projects/sophie-bluel.html", code: "https://github.com/diyaim/Sophie-Bluel", codeLabel: "Code" },
+      { cat: "fe", title: "Booki", desc: "Création d'un site responsive en HTML et CSS à partir de maquettes Figma.", image: "booki.webp", tags: ["HTML5", "CSS3", "Figma"], page: "projects/booki.html", code: "https://github.com/diyaim/booki", codeLabel: "Code" }
+    ];
+
+    const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+
+    /* ---------- Rendu ---------- */
+    document.getElementById("skillsGrid").innerHTML = SKILLS.map((s) => `
+      <article class="card reveal">
+        <div class="icon-box ${s.tone ? "icon-box--" + s.tone : ""}"><svg class="i"><use href="#${s.icon}"/></svg></div>
+        <div class="card__content">
+          <h3 class="card__title">${esc(s.title)}</h3>
+          <p class="card__description">${esc(s.text)}</p>
+        </div>
+        <ul class="chips">${s.pills.map((p) => `<li class="chip">${esc(p)}</li>`).join("")}</ul>
+      </article>`).join("");
+
+    const projectsGrid = document.getElementById("projectsGrid");
+    projectsGrid.innerHTML = PROJECTS.map((p) => `
+      <article class="card project reveal" data-cat="${p.cat}">
+        <div class="project__media">
+          <img class="project__img" src="images/${p.image}" alt="Aperçu du projet ${esc(p.title)}" loading="lazy" decoding="async" />
+          <span class="chip project__type ${p.cat === "qa" ? "chip--success" : "chip--accent"} chip--soft"><span class="chip__dot"></span>${p.cat === "qa" ? "QA" : "Front-end"}</span>
+        </div>
+        <div class="project__body">
+          <h3 class="card__title">${esc(p.title)}</h3>
+          <p class="card__description">${esc(p.desc)}</p>
+          <ul class="chips">${p.tags.map((t) => `<li class="chip">${esc(t)}</li>`).join("")}</ul>
+          <div class="card__footer">
+            <a class="button button--primary button--sm" href="${p.page}">Voir le projet <svg class="i"><use href="#i-arrow"/></svg></a>
+            <a class="button button--tertiary button--sm" href="${p.code}" target="_blank" rel="noopener"><svg class="i"><use href="#i-github"/></svg>${esc(p.codeLabel)}</a>
+          </div>
+        </div>
+      </article>`).join("");
+
+    /* ---------- Filtres projets ---------- */
+    document.querySelectorAll(".filter").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        document.querySelectorAll(".filter").forEach((b) => b.setAttribute("aria-pressed", String(b === btn)));
+        const f = btn.dataset.filter;
+        projectsGrid.querySelectorAll(".project").forEach((el) => {
+          el.hidden = f !== "all" && el.dataset.cat !== f;
+        });
+      });
+    });
+
+    /* ---------- Navbar ---------- */
+    const navbar = document.getElementById("navbar");
+    const onScroll = () => navbar.setAttribute("data-scrolled", String(window.scrollY > 8));
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+
+    const menuToggle = document.getElementById("menuToggle");
+    const mobileMenu = document.getElementById("mobileMenu");
+    menuToggle.addEventListener("click", () => {
+      const open = mobileMenu.getAttribute("data-open") !== "true";
+      mobileMenu.setAttribute("data-open", String(open));
+      menuToggle.setAttribute("aria-expanded", String(open));
+    });
+    mobileMenu.querySelectorAll("a").forEach((a) => a.addEventListener("click", () => {
+      mobileMenu.setAttribute("data-open", "false");
+      menuToggle.setAttribute("aria-expanded", "false");
+    }));
+
+    /* Lien actif selon la section visible */
+    const links = document.querySelectorAll(".nav-links .nav-link");
+    const spy = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting) links.forEach((l) => l.setAttribute("aria-current", String(l.getAttribute("href") === "#" + e.target.id)));
+      });
+    }, { rootMargin: "-45% 0px -50% 0px" });
+    document.querySelectorAll("main section[id]").forEach((s) => spy.observe(s));
+
+    /* ---------- Thème clair / sombre ---------- */
+    document.getElementById("themeToggle").addEventListener("click", () => {
+      const root = document.documentElement;
+      const current = root.getAttribute("data-theme") || "light";
+      const next = current === "dark" ? "light" : "dark";
+      root.setAttribute("data-theme", next);
+      try { localStorage.setItem("theme", next); } catch (e) {}
+    });
+
+    /* ---------- Apparition au scroll ---------- */
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => { if (e.isIntersecting) { e.target.setAttribute("data-visible", "true"); io.unobserve(e.target); } });
+    }, { threshold: 0.1 });
+    document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
+  </script>
+</body>
 </html>
